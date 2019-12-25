@@ -104,6 +104,27 @@ BEGIN {
 }
 END_OF_SCRIPT
 
+# sftp script
+SFTP_SHELL_UPLOAD_FILE = <<-CONF
+#!/usr/bin/expect
+set timeout 480
+set host [lindex $argv 0]
+set port [lindex $argv 1]
+set username [lindex $argv 2]
+set rsa_path [lindex $argv 3]
+set src_file [lindex $argv 4]
+set dest_file [lindex $argv 5]
+spawn sftp -oIdentityFile=$rsa_path -oPort=$port $username@$host
+expect {
+    "sftp>" {send "\n"}
+}
+expect "sftp>"
+send "put $src_file $dest_file\n"
+expect "sftp>"
+send "quit\n"
+expect eof
+CONF
+
 class DDIFormatter < Log4r::Formatter
     def format(event)
         buffer = Time.now.strftime("%Y-%m-%d %H:%M:%S ")
@@ -328,27 +349,6 @@ class UploadJob
 			log_type: 'RUBY_STYLE_FORMAT'
 		}
 	]
-
-	# sftp script
-	SFTP_SHELL_UPLOAD_FILE = <<-CONF
-	#!/usr/bin/expect
-	set timeout 480
-	set host [lindex $argv 0]
-	set port [lindex $argv 1]
-	set username [lindex $argv 2]
-	set rsa_path [lindex $argv 3]
-	set src_file [lindex $argv 4]
-	set dest_file [lindex $argv 5]
-	spawn sftp -oIdentityFile=$rsa_path -oPort=$port $username@$host
-	expect {
-	    "sftp>" {send "\n"}
-	}
-	expect "sftp>"
-	send "put $src_file $dest_file\n"
-	expect "sftp>"
-	send "quit\n"
-	expect eof
-	CONF
 
 	# @params start_date Timestamp 日志起始时间
 	# @params end_date   Timestamp 日志结束时间
