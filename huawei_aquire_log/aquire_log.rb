@@ -354,8 +354,7 @@ class UploadJob
 	# @params end_date   Timestamp 日志结束时间
 	# @params logs 		 Array     指定要取的日志
 	def start ftp_ip, ftp_port, ftp_user, backup_path, start_date, end_date, node_ip, logs=[]
-	    Log.info "=================Starting...================="
-    	Log.info "Prepare upload to Huawei sftp server.."
+	    Log.info "====================Starting...====================="
 
 		unix_start_date = DateTime.parse(start_date + ' +0800').to_time.to_i
 		unix_end_date   = DateTime.parse(end_date + ' +0800').to_time.to_i
