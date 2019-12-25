@@ -16,6 +16,7 @@ require 'uri'
 # 3) zip包的名称为zdns_{node_id}_{start_date}_{end_date}.zip
 # 4) 本脚本会产生自己的日志在/usr/local/upload_to_huawei_logs000001.log
 # 5) 进程名称为 zdns:upload_to_huawei
+# 6) 目标日志列表见 UploadJob::LOGS
 ##################### 调用说明 ########################################
 # 调用命令
 # ruby aquire_log.rb 10.1.107.164 22 root /backups/ 20190122T100506 20191230T140506
@@ -116,12 +117,12 @@ set src_file [lindex $argv 4]
 set dest_file [lindex $argv 5]
 spawn sftp -oIdentityFile=$rsa_path -oPort=$port $username@$host
 expect {
-    "sftp>" {send "\n"}
+    "sftp>" {send "\\n"}
 }
 expect "sftp>"
-send "put $src_file $dest_file\n"
+send "put $src_file $dest_file\\n"
 expect "sftp>"
-send "quit\n"
+send "quit\\n"
 expect eof
 CONF
 
@@ -165,6 +166,7 @@ class UploadJob
 	MAX_LINE_CHECK = 50
 	HUAWEI_INFO_URL = '/api/v1.0/3rd-conf/conf-backup-result'
 
+	# 日志过滤列表
 	LOGS = [
 		{
 			name: 'grid',
@@ -355,12 +357,13 @@ class UploadJob
 	# @params logs 		 Array     指定要取的日志
 	def start ftp_ip, ftp_port, ftp_user, backup_path, start_date, end_date, node_ip, logs=[]
 	    Log.info "====================Starting...====================="
-
+	    
+	    end_date = end_date + '2359' if end_date.length <= 8 # 如果结束日期中没有包含时间则设置时间为一天得结束
 		unix_start_date = DateTime.parse(start_date + ' +0800').to_time.to_i
 		unix_end_date   = DateTime.parse(end_date + ' +0800').to_time.to_i
 		return if unix_start_date > unix_end_date # 时间校验
-		tar_gz_name 	= "zdns_#{node_ip}_#{start_date}_#{end_date}.zip"
-		target_tar_path = File.join(backup_path, tar_gz_name)
+		zip_name 		= "zdns_#{node_ip}_#{start_date}_#{end_date}.zip"
+		target_tar_path = File.join(backup_path, zip_name)
 		reload_target_log_path
 
 		LOGS.each do |log|
@@ -426,7 +429,7 @@ class UploadJob
 
 	def compress_log_files
 		Log.info 'Compressing file...'
-		cmd = "tar -czvf #{TARGET_LOG_TAR} #{TARGET_LOG_PATH}"
+		cmd = "zip -r #{TARGET_LOG_TAR} #{TARGET_LOG_PATH}"
 		system(cmd)
 	end
 
