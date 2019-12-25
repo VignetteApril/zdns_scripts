@@ -27,7 +27,10 @@ require 'uri'
 # 4) /backups/ 			为华为sftp server的目标路径
 # 5) 20190122T100506 	为日志过滤开始的时间戳
 # 6) 20191230T140506 	为日志结束的时间戳
-#####################   end   ########################################
+##################### Sftp server ####################################
+# 1) 关于sftp server的配置，需要事先在目标的sftp server配置好当前server的ssh
+#    key，否则上传不成功
+######################################################################
 
 PROCESS_NAME = 'zdns:upload_to_huawei'
 RUBY_STYLE_FORMAT = <<END_OF_SCRIPT
@@ -357,7 +360,7 @@ class UploadJob
 	# @params logs 		 Array     指定要取的日志
 	def start ftp_ip, ftp_port, ftp_user, backup_path, start_date, end_date, node_ip, logs=[]
 	    Log.info "====================Starting...====================="
-	    
+
 	    end_date = end_date + '2359' if end_date.length <= 8 # 如果结束日期中没有包含时间则设置时间为一天得结束
 		unix_start_date = DateTime.parse(start_date + ' +0800').to_time.to_i
 		unix_end_date   = DateTime.parse(end_date + ' +0800').to_time.to_i
