@@ -411,7 +411,7 @@ class UploadJob
 	rescue => e
 		Log.error "!!!!!!!!!!!!!!!!!!!!!!!!!!! #{e.to_s} !!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	ensure
-		Log.info "Deleting temp files...: #{TARGET_LOG_PATH} #{TARGET_LOG_TAR} #{SFTP_BIN_PATH} #{SCRIPT_PATH}"
+		Log.info "Deleting temp files...: #{TARGET_LOG_PATH}, #{TARGET_LOG_TAR}, #{SFTP_BIN_PATH}, #{SCRIPT_PATH}"
 		FileUtils.rm_r TARGET_LOG_PATH, force: true if Dir.exist?(TARGET_LOG_PATH)
 		FileUtils.rm_r TARGET_LOG_TAR, force: true if File.exist?(TARGET_LOG_TAR)
 		FileUtils.rm_r SFTP_BIN_PATH, force: true if File.exist?(SFTP_BIN_PATH)
