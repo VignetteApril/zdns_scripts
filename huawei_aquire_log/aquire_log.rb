@@ -359,6 +359,27 @@ class UploadJob
 			find_name: 'add.log.',
 			target_name: 'add_target.log.',
 			log_type: 'BIND_STYLE_FORMAT'
+		},
+		{
+			name: 'cloudprobe',
+			path: '/usr/local',
+			find_name: 'cloudprobe0*.log',
+			target_name: 'cloudprobe_target.log',
+			log_type: 'RUBY_STYLE_FORMAT'
+		},
+		{
+			name: 'probe',
+			path: '/usr/local',
+			find_name: 'probe0*.log',
+			target_name: 'probe_target.log',
+			log_type: 'RUBY_STYLE_FORMAT'
+		},
+		{
+			name: 'probed',
+			path: '/usr/local',
+			find_name: 'probed.log*',
+			target_name: 'probed_target.log',
+			log_type: 'BIND_STYLE_FORMAT'
 		}
 	]
 
