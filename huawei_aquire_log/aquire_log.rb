@@ -352,6 +352,13 @@ class UploadJob
 			find_name: 'zdns_monitor_snmp0*.log',
 			target_name: 'zdns_monitor_snmp_target.log',
 			log_type: 'RUBY_STYLE_FORMAT'
+		},
+		{
+			name: 'add',
+			path: '/usr/local/zddi/dns/log',
+			find_name: 'add.log.',
+			target_name: 'add_target.log.',
+			log_type: 'BIND_STYLE_FORMAT'
 		}
 	]
 
