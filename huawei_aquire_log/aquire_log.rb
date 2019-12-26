@@ -418,7 +418,7 @@ class UploadJob
 				script = Object.const_get(log[:log_type])
 				File.open(SCRIPT_PATH, "w+"){ |f| f.write(script) }
 				current_log_paths.each do |log_path|
-					next if check_if_can_skip_log log_path, log[:log_type], unix_start_date, unix_end_date
+					# next if check_if_can_skip_log log_path, log[:log_type], unix_start_date, unix_end_date
 					cmd = "gawk -v start_date=#{unix_start_date} -v end_date=#{unix_end_date} -f #{SCRIPT_PATH} #{log_path} > #{target_log_path}"
 					system(cmd)
 				end
