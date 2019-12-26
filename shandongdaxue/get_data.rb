@@ -1,4 +1,3 @@
-require 'byebug'
 require 'json'
 
 ES_SCRIPT = <<END_OF_SCRIPT
