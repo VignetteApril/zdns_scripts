@@ -176,210 +176,210 @@ class UploadJob
 			name: 'grid',
 			path: '/usr/local',
 			find_name: 'grid0*.log',
-			target_name: 'grid_target.log',
+			target_name: 'grid.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'dns',
 			path: '/usr/local',
 			find_name: 'dns0*.log',
-			target_name: 'dns_target.log',
+			target_name: 'dns.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'clouddns',
 			path: '/usr/local',
 			find_name: 'clouddns0*.log',
-			target_name: 'clouddns_target.log',
+			target_name: 'clouddns.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'system',
 			path: '/usr/local',
 			find_name: 'system0*.log',
-			target_name: 'system_target.log',
+			target_name: 'system.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'node',
 			path: '/usr/local',
 			find_name: 'node0*.log',
-			target_name: 'node_target.log',
+			target_name: 'node.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'agent',
 			path: '/usr/local',
 			find_name: 'agent0*.log',
-			target_name: 'agent_target.log',
+			target_name: 'agent.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'zva',
 			path: '/usr/local',
 			find_name: 'zva0*.log',
-			target_name: 'zva_target.log',
+			target_name: 'zva.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'monitor_core',
 			path: '/usr/local',
 			find_name: 'monitor_core0*.log',
-			target_name: 'monitor_core_target.log',
+			target_name: 'monitor_core.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'monitor_main',
 			path: '/usr/local',
 			find_name: 'monitor_main0*.log',
-			target_name: 'monitor_main_target.log',
+			target_name: 'monitor_main.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{ 
 			name: 'web_access',
 			path: '/usr/local',
 			find_name: 'web.access.log',
-			target_name: 'web.access_target.log',
+			target_name: 'web.access.log',
 			log_type: 'WEB_ACCESS_STYLE_FORMAT',
 		},
 		{
 			name: 'web_error',
 			path: '/usr/local',
 			find_name: 'web.error.log',
-			target_name: 'web.error_target.log',
+			target_name: 'web.error.log',
 			log_type: 'RUBY_STYLE_FORMAT',
 		},
 		{
 			name: 'web',
 			path: '/usr/local',
 			find_name: 'web0*.log',
-			target_name: 'web_target.log',
+			target_name: 'web.log',
 			log_type: 'RUBY_STYLE_FORMAT',
 		},
 		{
 			name: 'rsync',
 			path: '/usr/local/rsync',
 			find_name: 'rsync.log',
-			target_name: 'rsync_target.log',
+			target_name: 'rsync.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'zddi',
 			path: '/usr/local',
 			find_name: 'zddi.log',
-			target_name: 'zddi_target.log',
+			target_name: 'zddi.log',
 			log_type: 'ZDDI_STYLE_FORMAT'
 		},
 		{
 			name: 'dmesg',
 			path: '/usr/local',
 			find_name: 'dmesg.log',
-			target_name: 'dmesg_target.log',
+			target_name: 'dmesg.log',
 			log_type: 'DMESG_STYLE_FORMAT'
 		},
 		{
 			name: 'upgrade',
 			path: '/usr/local',
 			find_name: 'upgrade.log',
-			target_name: 'upgrade_target.log',
+			target_name: 'upgrade.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'upgrade_upgrade',
 			path: '/usr/local/upgrade',
 			find_name: 'upgrade.log',
-			target_name: 'upgrade_upgrade_target.log',
+			target_name: 'upgrade_upgrade.log',
 			log_type: 'UPGRADE_STYLE_FORMAT'
 		},
 		{
 			name: 'upgrade_manager',
 			path: '/usr/local',
 			find_name: 'upgrade_manager.log',
-			target_name: 'upgrade_manager_target.log',
+			target_name: 'upgrade_manager.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'zdns_alarm_node_msg',
 			path: '/usr/local',
 			find_name: 'zdns_alarm_node_msg0*.log',
-			target_name: 'zdns_alarm_node_msg_target.log',
+			target_name: 'zdns_alarm_node_msg.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'general_log',
 			path: '/usr/local/zddi/dns/log',
 			find_name: 'general_log',
-			target_name: 'general_log_target.log',
+			target_name: 'general_logt.log',
 			log_type: 'BIND_STYLE_FORMAT'
 		},
 		{
 			name: 'resolver',
 			path: '/usr/local/zddi/dns/log',
 			find_name: 'resolver.log.',
-			target_name: 'resolver_log_target.log',
+			target_name: 'resolver_log.log',
 			log_type: 'BIND_STYLE_FORMAT'
 		},
 		{
 			name: 'sa',
 			path: '/var/log/sa',
 			find_name: 'sa*',
-			target_name: 'sa_target.tar.gz',
+			target_name: 'sa.zip',
 			log_type: 'SA_STYLE_FORMAT'
 		},
 		{
 			name: 'keepalive',
 			path: '/usr/local',
 			find_name: 'keepalive.log',
-			target_name: 'keepalive_target.log',
+			target_name: 'keepalive.log',
 			log_type: 'KEEPALIVE_STYLE_FORMAT'
 		},
 		{
 			name: 'secure',
 			path: '/var/log',
 			find_name: 'secure-*',
-			target_name: 'secure_target',
+			target_name: 'secure',
 			log_type: 'KEEPALIVE_STYLE_FORMAT'
 		},
 		{
 			name: 'monitor_cpu_mem',
 			path: '/usr/local',
 			find_name: 'monitor_cpu_mem.log',
-			target_name: 'monitor_cpu_mem_target.log',
+			target_name: 'monitor_cpu_mem.log',
 			log_type: 'MONITOR_STYLE_FORMAT'
 		},
 		{
 			name: 'zdns_monitor_snmp',
 			path: '/usr/local',
 			find_name: 'zdns_monitor_snmp0*.log',
-			target_name: 'zdns_monitor_snmp_target.log',
+			target_name: 'zdns_monitor_snmp.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'add',
 			path: '/usr/local/zddi/dns/log',
 			find_name: 'add.log.',
-			target_name: 'add_target.log.',
+			target_name: 'add.log.',
 			log_type: 'BIND_STYLE_FORMAT'
 		},
 		{
 			name: 'cloudprobe',
 			path: '/usr/local',
 			find_name: 'cloudprobe0*.log',
-			target_name: 'cloudprobe_target.log',
+			target_name: 'cloudprobe.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'probe',
 			path: '/usr/local',
 			find_name: 'probe0*.log',
-			target_name: 'probe_target.log',
+			target_name: 'probe.log',
 			log_type: 'RUBY_STYLE_FORMAT'
 		},
 		{
 			name: 'probed',
 			path: '/usr/local',
 			find_name: 'probed.log*',
-			target_name: 'probed_target.log',
+			target_name: 'probed.log',
 			log_type: 'BIND_STYLE_FORMAT'
 		}
 	]
@@ -419,8 +419,9 @@ class UploadJob
 				script = Object.const_get(log[:log_type])
 				File.open(SCRIPT_PATH, "w+"){ |f| f.write(script) }
 				current_log_paths.each do |log_path|
+					Log.info "current handle #{log_path}"
 					# next if check_if_can_skip_log log_path, log[:log_type], unix_start_date, unix_end_date
-					cmd = "gawk -v start_date=#{unix_start_date} -v end_date=#{unix_end_date} -f #{SCRIPT_PATH} #{log_path} > #{target_log_path}"
+					cmd = "gawk -v start_date=#{unix_start_date} -v end_date=#{unix_end_date} -f #{SCRIPT_PATH} #{log_path} >> #{target_log_path}"
 					system(cmd)
 				end
 			end
@@ -468,16 +469,15 @@ class UploadJob
 	def upload_file_through_sftp ftp_ip, ftp_port, ftp_user, target_tar_path
 		reload_sftp_bin_file
 		add_know_hosts ftp_ip
-
+		rs = false
 		File.open(SFTP_BIN_PATH, "w"){|f| f << "#{SFTP_SHELL_UPLOAD_FILE}"}
 
 		cmd = "#{SFTP_BIN_PATH} #{ftp_ip} #{ftp_port} #{ftp_user} #{SFTP_PRIVATE_KEY} #{TARGET_LOG_TAR} #{target_tar_path} 2>&1"
-		
 		begin
-		  Timeout.timeout(15) do
-  			rs = system(cmd)
+		  Timeout.timeout(60) do
+		    rs = system(cmd)
 		  end
-		rescue Timeout::Error
+		rescue => e
 			Log.info "Upload command time out!!"
 			rs = false
 		end
@@ -499,9 +499,9 @@ class UploadJob
 	def send_upload_result_to_huawei upload_flag
 		msg = upload_flag ? 'success' : 'failed'
 		Log.info "Sending upload #{msg} message to huawei server"
-		# Net::HTTP.post URI(HUAWEI_INFO_URL),
-	 #              	   { "version" => "V001R017C00", "vm_type" => "controller", "status" => "#{msg}" }.to_json,
-	 #               	   "Content-Type" => "application/json"
+		Net::HTTP.post URI(HUAWEI_INFO_URL),
+	              	   { "version" => "V001R017C00", "vm_type" => "controller", "status" => "#{msg}" }.to_json,
+	               	   	 "Content-Type" => "application/json"
 	end
 
 	# 检查要上传的文件的大小，如果大于5M的话则告知华为上传失败
@@ -651,6 +651,6 @@ if $0 == __FILE__
 
     pid = fork do
         $0 = PROCESS_NAME
-        UploadJob.new.start sftp_ip, sftp_port, sftp_user, sftp_path, start_date, end_date, client_ip
+        UploadJob.new.start sftp_ip, sftp_port, sftp_user, sftp_path, start_date, end_date, client_ip, huawei_post_url
     end
 end
