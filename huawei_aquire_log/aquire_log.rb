@@ -491,7 +491,7 @@ class UploadJob
 		msg = upload_flag ? 'success' : 'failed'
 		Log.info "Sending upload #{msg} message to huawei server"
 		# Net::HTTP.post URI(HUAWEI_INFO_URL),
-	 #              	   { "“version”" => "V001R017C00", "vm_type" => "controller", "status" => "#{msg}" }.to_json,
+	 #              	   { "version" => "V001R017C00", "vm_type" => "controller", "status" => "#{msg}" }.to_json,
 	 #               	   "Content-Type" => "application/json"
 	end
 
