@@ -6,6 +6,7 @@ require 'socket'
 require 'log4r'
 require 'net/http'
 require 'uri'
+require 'timeout'
 
 ##################### 使用说明 （版本：2019-12-25）####################
 # 1) 本脚本提供通过传入的时间参数过滤日志的功能，keepalive 和 secure-* 因为
@@ -471,7 +472,15 @@ class UploadJob
 		File.open(SFTP_BIN_PATH, "w"){|f| f << "#{SFTP_SHELL_UPLOAD_FILE}"}
 
 		cmd = "#{SFTP_BIN_PATH} #{ftp_ip} #{ftp_port} #{ftp_user} #{SFTP_PRIVATE_KEY} #{TARGET_LOG_TAR} #{target_tar_path} 2>&1"
-		rs = system(cmd)
+		
+		begin
+		  Timeout.timeout(15) do
+  			rs = system(cmd)
+		  end
+		rescue Timeout::Error
+			Log.info "Upload command time out!!"
+			rs = false
+		end
 		rs
 	end
 
