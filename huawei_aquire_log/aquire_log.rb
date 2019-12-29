@@ -309,14 +309,14 @@ class UploadJob
 			name: 'general_log',
 			path: '/usr/local/zddi/dns/log',
 			find_name: 'general_log',
-			target_name: 'general_logt.log',
+			target_name: 'general.log',
 			log_type: 'BIND_STYLE_FORMAT'
 		},
 		{
 			name: 'resolver',
 			path: '/usr/local/zddi/dns/log',
 			find_name: 'resolver.log.',
-			target_name: 'resolver_log.log',
+			target_name: 'resolver.log',
 			log_type: 'BIND_STYLE_FORMAT'
 		},
 		{
@@ -393,7 +393,7 @@ class UploadJob
 	    end_date = end_date + '2359' if end_date.length <= 8 # 如果结束日期中没有包含时间则设置时间为一天得结束
 		unix_start_date = DateTime.parse(start_date + ' +0800').to_time.to_i
 		unix_end_date   = DateTime.parse(end_date + ' +0800').to_time.to_i
-		return if unix_start_date > unix_end_date # 时间校验
+		return if unix_start_date > unix_end_date
 		zip_name 		= "zdns_#{node_ip}_#{start_date}_#{end_date}.zip"
 		target_tar_path = File.join(backup_path, zip_name)
 		reload_target_log_path
